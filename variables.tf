@@ -2,10 +2,10 @@
 # SPDX-License-Identifier: MPL-2.0
 
 variable "aws_region" {
-  default = "us-west-2"
+  default = "eu-west-3"
 }
 
 variable "cluster_name" {
-  default = "terraform-eks-demo"
+  default = "studi-ecf-eks-"
   type    = string
 }
