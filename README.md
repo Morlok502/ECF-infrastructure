@@ -1,6 +1,6 @@
 # ECF-infrastructure  
 
-[Notion - Taches à faire](https://mirror-paw-f24.notion.site/f2fa7cecae5a4cd4a1792bf963ec744a?v=b71bd3754f5541c1a7c1a23cbb2f1ca9)  
+[Planning Notion](https://mirror-paw-f24.notion.site/f2fa7cecae5a4cd4a1792bf963ec744a?v=b71bd3754f5541c1a7c1a23cbb2f1ca9)  
 
 ## Activité Type 1 : Automatisation du déploiement d’infrastructure dans le Cloud  
 
