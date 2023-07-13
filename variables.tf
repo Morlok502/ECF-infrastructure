@@ -6,6 +6,6 @@ variable "aws_region" {
 }
 
 variable "cluster_name" {
-  default = "studi-ecf-eks-"
+  default = "studi-ecf-eks-cluster"
   type    = string
 }
