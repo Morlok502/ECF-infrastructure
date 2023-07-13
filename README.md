@@ -73,22 +73,23 @@ kubectl get pods # Lister tous les pods créés (aucun à la création de l'infr
 ![](img/image.png)  
 
 #### 1.4 Ressources créées dans AWS
-- IAM Roles **studi-eks-ecf-cluster** avec 2 policies affectées :  
+- IAM Roles : **studi-eks-ecf-cluster** avec 2 policies affectées  
   ![studi-eks-ecf-cluster](img/image-1.png)  
-- IAM Roles **studi-eks-ecf-node** avec 3 policies affectées :  
+- IAM Roles : **studi-eks-ecf-node** avec 3 policies affectées  
   ![studi-eks-ecf-node](img/image-2.png)  
 
-- Security Groups / 
+- Security Groups 
   ![](img/image-9.png)  
+
 - aws_security_group_rule  
 
 - Le Cluster **studi-ecf-eks-cluster**, le node group **ecf** et le node créé à partir d'une instance t3.small
 ![cluster, node groupe et node](img/image-8.png)
 
-- VPC **studi-eks-ecf-node**
+- VPC : **studi-eks-ecf-node**
  ![studi-eks-ecf-node](img/image-3.png)  
 
-- 2 subnets **studi-eks-ecf-node**  
+- 2 subnets : **studi-eks-ecf-node**  
 ![studi-eks-ecf-node](img/image-4.png)  
 
  - Internet gateways
