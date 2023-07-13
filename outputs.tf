@@ -16,7 +16,7 @@ metadata:
   namespace: kube-system
 data:
   mapRoles: |
-    - rolearn: ${aws_iam_role.demo-node.arn}
+    - rolearn: ${aws_iam_role.ecf-node.arn}
       username: system:node:{{EC2PrivateDNSName}}
       groups:
         - system:bootstrappers
@@ -29,27 +29,32 @@ CONFIGMAPAWSAUTH
 apiVersion: v1
 clusters:
 - cluster:
-    server: ${aws_eks_cluster.demo.endpoint}
-    certificate-authority-data: ${aws_eks_cluster.demo.certificate_authority[0].data}
-  name: kubernetes
+    server: ${aws_eks_cluster.ecf.endpoint}
+    certificate-authority-data: ${aws_eks_cluster.ecf.certificate_authority[0].data}
+  name: ${aws_eks_cluster.ecf.arn}
 contexts:
 - context:
-    cluster: kubernetes
-    user: aws
-  name: aws
-current-context: aws
+    cluster: ${aws_eks_cluster.ecf.arn}
+    user: ${aws_eks_cluster.ecf.arn}
+  name: ${aws_eks_cluster.ecf.arn}
+current-context: ${aws_eks_cluster.ecf.arn}
 kind: Config
 preferences: {}
 users:
-- name: aws
+- name: ${aws_eks_cluster.ecf.arn}
   user:
     exec:
       apiVersion: client.authentication.k8s.io/v1beta1
-      command: aws-iam-authenticator
       args:
-        - "token"
-        - "-i"
-        - "${var.cluster_name}"
+      - --region
+      - "${var.aws_region}"
+      - eks
+      - get-token
+      - --cluster-name
+      - "${var.cluster_name}"
+      - --output
+      - json
+      command: aws
 KUBECONFIG
 }
 
