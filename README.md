@@ -1,5 +1,10 @@
+# ECF-infrastructure  
 
+📅 [**Planning Notion**](https://mirror-paw-f24.notion.site/f2fa7cecae5a4cd4a1792bf963ec744a?v=b71bd3754f5541c1a7c1a23cbb2f1ca9) 📅  
+___  
+## Table of content
 - [ECF-infrastructure](#ecf-infrastructure)
+  - [Table of content](#table-of-content)
   - [Activité Type 1 : Automatisation du déploiement d’infrastructure dans le Cloud](#activité-type-1--automatisation-du-déploiement-dinfrastructure-dans-le-cloud)
     - [1. Préparez un kube kubernetes en utilisant Terraform (3 points).](#1-préparez-un-kube-kubernetes-en-utilisant-terraform-3-points)
       - [1.1 Création de l'IAC](#11-création-de-liac)
@@ -8,10 +13,6 @@
       - [1.4 Ressources créées dans AWS](#14-ressources-créées-dans-aws)
     - [2. Ajoutez/configurez les variables d’environnement qui se connectent à la BDD (3 points).](#2-ajoutezconfigurez-les-variables-denvironnement-qui-se-connectent-à-la-bdd-3-points)
     - [Sources utilisées](#sources-utilisées)
-
-# ECF-infrastructure  
-
-[Planning Notion](https://mirror-paw-f24.notion.site/f2fa7cecae5a4cd4a1792bf963ec744a?v=b71bd3754f5541c1a7c1a23cbb2f1ca9)  
 
 ## Activité Type 1 : Automatisation du déploiement d’infrastructure dans le Cloud  
 
