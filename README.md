@@ -20,8 +20,9 @@ ___
 
 #### 1.1 Création de l'IAC
 
+Le projet a été construit à partir du template fourni par hashicorp : [Github - eks-getting-started](https://github.com/hashicorp/terraform-provider-aws/tree/main/examples/eks-getting-started)  
 Tous ces fichiers sont créés dans un même dossiers.  
-
+Ci dessous, le détails des ressources créées par chaque fichier :  
 - [variables.tf](variables.tf)  
   - variable : aws_region
   - variable : cluster_name
@@ -105,6 +106,8 @@ kubectl get pods # Lister tous les pods créés (aucun à la création de l'infr
 
 
 ### 2. Ajoutez/configurez les variables d’environnement qui se connectent à la BDD (3 points).  
+
+**--- A FAIRE ---**
 
 ### Sources utilisées
 Ressources utilisées :
