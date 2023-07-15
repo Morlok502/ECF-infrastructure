@@ -47,7 +47,7 @@ resource "aws_eks_node_group" "ecf" {
   node_role_arn   = aws_iam_role.ecf-node.arn
   subnet_ids      = aws_subnet.ecf[*].id
   disk_size       = 10
-  instance_types  = ["t3.small"]
+  instance_types  = ["t2.micro"]
 
   scaling_config {
     desired_size = 1
