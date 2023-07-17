@@ -64,7 +64,11 @@ terraform destroy # Déstruction de toutes les ressources créées
 
 #### 1.3 Interactions avec kubectl
 
-✔ Prérequis : pour pouvoir communiquer avec notre Kube, il faut copier la sortie générée par `terraform apply` (sur le modèle donné par [outputs.tf](outputs.tf)) et la coller dans la configuration de kubectl (**~/.kube/config** sous Linux ou **%USERPROFILE%\.kube\config** sous Windows)
+✔ Prérequis : pour pouvoir communiquer avec notre Kube, il faut parametrer notre kubeconfig avec une des méthodes ci-dessous : 
+- Copier la sortie générée par `terraform apply` (sur le modèle donné par [outputs.tf](outputs.tf)) et la coller dans la configuration de kubectl (**~/.kube/config** sous Linux ou **%USERPROFILE%\.kube\config** sous Windows)  
+- Exécuter la commande suivante, en remplaçant `region-code` et `my-cluster` par les valeurs données par la sortie de `terraform apply` : `aws eks update-kubeconfig --region region-code --name my-cluster`  
+
+Une fois la config renseignée, on peut utiliser les commandes suivantes :  
 
 ```
 kubectl get svc # Lister tous les services
@@ -119,8 +123,9 @@ Ressources utilisées :
 [Github - terraform-provider-aws](https://github.com/hashicorp/terraform-provider-aws)  
 [AWS - Creating an Amazon EKS cluster](https://docs.aws.amazon.com/eks/latest/userguide/create-cluster.html)  
 [AWS - Creating a VPC for your Amazon EKS cluster](https://docs.aws.amazon.com/eks/latest/userguide/creating-a-vpc.html)  
+[AWS - Création ou mise à jour d'un fichier kubeconfig pour un cluster Amazon EKS](https://docs.aws.amazon.com/fr_fr/eks/latest/userguide/create-kubeconfig.html)  
 [Youtube - How to provision AWS EKS using Terraform](https://www.youtube.com/watch?v=KsvfV5iuWqM)  
 [Youtube - EKS cluster using management console - Part 1](https://www.youtube.com/watch?v=kDTr3IJfawY)  
 [Youtube - EKS cluster using management console - Part 2](https://www.youtube.com/watch?v=IHdWJhMGdXA)  
 [Youtube - EKS cluster using management console - Part 3](https://www.youtube.com/watch?v=0amRQQnwwAk)  
- 
+
