@@ -114,7 +114,6 @@ kubectl get pods # Lister tous les pods créés (aucun à la création de l'infr
 **--- A FAIRE ---**
 
 ### Sources utilisées
-Ressources utilisées :
 
 [Terraform - Provision an EKS Cluster (AWS)](https://developer.hashicorp.com/terraform/tutorials/kubernetes/eks)  
 [Terraform - Resource: aws_eks_cluster](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/eks_cluster)  
