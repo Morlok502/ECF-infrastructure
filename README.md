@@ -20,36 +20,25 @@ ___
 
 #### 1.1 Création de l'IAC
 
-Le projet a été construit à partir du template fourni par hashicorp : [Github - eks-getting-started](https://github.com/hashicorp/terraform-provider-aws/tree/main/examples/eks-getting-started)  
-Tous ces fichiers sont créés dans un même dossiers.  
-Ci dessous, le détails des ressources créées par chaque fichier :  
-- [variables.tf](variables.tf)  
-  - variable : aws_region
-  - variable : cluster_name
-- [providers.tf](providers.tf)  
-  - provider : aws
-- [eks-cluster.tf](eks-cluster.tf)  
-  - ressource : aws_iam_role
-  - ressource : aws_iam_role_policy_attachment
-  - ressource : aws_iam_role_policy_attachment
-  - ressource : aws_security_group
-  - ressource : aws_security_group
-  - ressource : aws_security_group_rule
-  - ressource : aws_eks_cluster
-- [eks-worker-nodes.tf](eks-worker-nodes.tf)  
-  - ressource : aws_iam_role
-  - ressource : aws_iam_role_policy_attachment
-  - ressource : aws_iam_role_policy_attachment
-  - ressource : aws_iam_role_policy_attachment
-  - ressource : aws_eks_node_group
-- [vpc.tf](vpc.tf)  
-  - ressource : aws_vpc
-  - ressource : aws_subnet
-  - ressource : aws_internet_gateway
-  - ressource : aws_route_table
-  - ressource : aws_route_table_association
-- [workstation-external-ip.tf](workstation-external-ip.tf)  
-- [outputs.tf](outputs.tf)  
+ ✔ Prérequis : installation de Terraform en local [Install Terraform](https://developer.hashicorp.com/terraform/downloads)  
+Construction d'un projet terraform, avec les ressources suivantes : 
+- 1 VPC
+- 2 subnets
+- 1 internet gateway
+- 1 route table
+- 2 route table association
+- 1 role iam pour le Cluster eks
+- 2 policies associées (AmazonEKSClusterPolicy et AmazonEKSVPCResourceController)
+- 1 groupe de sécurité pour le cluster eks
+- 1 règle pour le groupe de sécurité
+- 1 Cluster
+- 1 role pour le node
+- 3 policies associées à ce rôle (AmazonEKSWorkerNodePolicy, AmazonEKS_CNI_Policy et AmazonEC2ContainerRegistryReadOnly)
+- 1 node groupe
+
+Cette structure suffira pour faire tourner notre container.
+
+Remarque : Le projet a été construit à partir du template fourni par hashicorp : [Github - eks-getting-started](https://github.com/hashicorp/terraform-provider-aws/tree/main/examples/eks-getting-started)  
 
 #### 1.2 Process création de l'infrastructure
 
