@@ -6,17 +6,17 @@ ___
 - [ECF-infrastructure](#ecf-infrastructure)
   - [Table of content](#table-of-content)
   - [Activité Type 1 : Automatisation du déploiement d’infrastructure dans le Cloud](#activité-type-1--automatisation-du-déploiement-dinfrastructure-dans-le-cloud)
-    - [1. Préparez un kube kubernetes en utilisant Terraform (3 points).](#1-préparez-un-kube-kubernetes-en-utilisant-terraform-3-points)
+    - [1. Préparez un kube kubernetes en utilisant Terraform](#1-préparez-un-kube-kubernetes-en-utilisant-terraform)
       - [1.1 Création de l'IAC](#11-création-de-liac)
       - [1.2 Process création de l'infrastructure](#12-process-création-de-linfrastructure)
       - [1.3 Interactions avec kubectl](#13-interactions-avec-kubectl)
       - [1.4 Ressources créées dans AWS](#14-ressources-créées-dans-aws)
-    - [2. Ajoutez/configurez les variables d’environnement qui se connectent à la BDD (3 points).](#2-ajoutezconfigurez-les-variables-denvironnement-qui-se-connectent-à-la-bdd-3-points)
-    - [Sources utilisées](#sources-utilisées)
+    - [2. Ajoutez/configurez les variables d’environnement qui se connectent à la BDD](#2-ajoutezconfigurez-les-variables-denvironnement-qui-se-connectent-à-la-bdd)
+  - [Sources utilisées](#sources-utilisées)
 
 ## Activité Type 1 : Automatisation du déploiement d’infrastructure dans le Cloud  
 
-### 1. Préparez un kube kubernetes en utilisant Terraform (3 points).  
+### 1. Préparez un kube kubernetes en utilisant Terraform  
 
 #### 1.1 Création de l'IAC
 
@@ -79,6 +79,7 @@ kubectl get pods # Lister tous les pods créés (aucun à la création de l'infr
 ![](img/image.png)  
 
 #### 1.4 Ressources créées dans AWS
+
 - IAM Roles : **studi-eks-ecf-cluster** avec 2 policies affectées  
   ![studi-eks-ecf-cluster](img/image-1.png)  
 - IAM Roles : **studi-eks-ecf-node** avec 3 policies affectées  
@@ -109,16 +110,18 @@ kubectl get pods # Lister tous les pods créés (aucun à la création de l'infr
 
 
 
-### 2. Ajoutez/configurez les variables d’environnement qui se connectent à la BDD (3 points).  
+### 2. Ajoutez/configurez les variables d’environnement qui se connectent à la BDD
 
-**--- A FAIRE ---**
+❗ Cette partie a été traitée dans le repository [ECF-Hello-world-nestJS](https://github.com/Morlok502/ECF-deploiement-nestJS-Kube).  
+➡ Voir [README.md](https://github.com/Morlok502/ECF-deploiement-nestJS-Kube#ecf-hello-world-nestjs) pour le détail de cette étape.  
 
-### Sources utilisées
+## Sources utilisées
 
 [Terraform - Provision an EKS Cluster (AWS)](https://developer.hashicorp.com/terraform/tutorials/kubernetes/eks)  
 [Terraform - Resource: aws_eks_cluster](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/eks_cluster)  
 [Terraform - Resource: aws_eks_node_group](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/eks_node_group)  
-[Terraform - Resource: aws_iam_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy)  
+[Terraform - Resource: aws_iam_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) 
+[Terraform - kubernetes_secret](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/secret) 
 [Github - terraform-provider-aws](https://github.com/hashicorp/terraform-provider-aws)  
 [AWS - Creating an Amazon EKS cluster](https://docs.aws.amazon.com/eks/latest/userguide/create-cluster.html)  
 [AWS - Creating a VPC for your Amazon EKS cluster](https://docs.aws.amazon.com/eks/latest/userguide/creating-a-vpc.html)  
@@ -127,4 +130,3 @@ kubectl get pods # Lister tous les pods créés (aucun à la création de l'infr
 [Youtube - EKS cluster using management console - Part 1](https://www.youtube.com/watch?v=kDTr3IJfawY)  
 [Youtube - EKS cluster using management console - Part 2](https://www.youtube.com/watch?v=IHdWJhMGdXA)  
 [Youtube - EKS cluster using management console - Part 3](https://www.youtube.com/watch?v=0amRQQnwwAk)  
-
