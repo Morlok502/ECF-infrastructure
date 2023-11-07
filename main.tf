@@ -32,6 +32,20 @@ resource "aws_subnet" "ecf" {
   })
 }
 
+resource "aws_subnet" "ecf_private" {
+  count = 2
+
+  availability_zone       = data.aws_availability_zones.available.names[count.index]
+  cidr_block              = "10.0.${count.index + 10}.0/24"
+  map_public_ip_on_launch = false
+  vpc_id                  = aws_vpc.ecf.id
+
+  tags = tomap({
+    "Name"                                      = "studi-eks-ecf-node-private_subnet",
+    "kubernetes.io/cluster/${var.cluster_name}" = "shared",
+  })
+}
+
 resource "aws_internet_gateway" "ecf" {
   vpc_id = aws_vpc.ecf.id
 
