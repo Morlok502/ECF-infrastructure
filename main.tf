@@ -191,6 +191,17 @@ resource "aws_iam_role_policy_attachment" "ecf-node-AmazonEC2ContainerRegistryRe
   role       = aws_iam_role.ecf-node.name
 }
 
+# Policy pour envoyer les logs à cloudwatch
+resource "aws_iam_role_policy_attachment" "ecf-node-CloudWatchAgentServerPolicy" {
+  policy_arn = "arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy"
+  role       = aws_iam_role.ecf-node.name
+}
+
+resource "aws_eks_addon" "cloudwatch" {
+  addon_name   = "amazon-cloudwatch-observability"
+  cluster_name = "studi-ecf-eks-cluster"
+}
+
 resource "aws_eks_node_group" "ecf" {
   cluster_name    = aws_eks_cluster.ecf.name
   node_group_name = "ecf"
